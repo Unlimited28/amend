@@ -1,0 +1,86 @@
+/* Notification List Styles */
+.notification-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.notification-item.unread {
+    background-color: #f8f9fa;
+    border-left: 5px solid #007bff;
+}
+
+.notification-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.notification-item .icon-col {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    color: #001f3f;
+}
+
+.notification-item .content-col {
+    flex-grow: 1;
+}
+
+.notification-item .title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+}
+
+.notification-item .message {
+    margin: 0 0 10px 0;
+    color: #555;
+}
+
+.notification-item .date {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.notification-item .action-col {
+    margin-left: 20px;
+}
+
+.btn-sm-secondary {
+    background-color: #e9ecef;
+    color: #333;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.btn-sm-secondary:hover {
+    background-color: #ced4da;
+}
+
+/* Filter buttons */
+.filter-controls {
+    margin-bottom: 20px;
+}
+.filter-controls .filter-btn {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+.filter-controls .filter-btn.active {
+    background: #001f3f;
+    color: #fff;
+    border-color: #001f3f;
+}

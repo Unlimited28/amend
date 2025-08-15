@@ -1,0 +1,75 @@
+<!-- ROLE: PRESIDENT ONLY -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ambassadors List - President</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/manage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-box">
+            <img src="../assets/logo.png" alt="Logo" class="logo-img">
+            <h2 class="role">President</h2>
+        </div>
+        <ul class="nav">
+            <li data-role="PRESIDENT"><a href="dashboard.html">Dashboard</a></li>
+            <li data-role="PRESIDENT"><a href="exams.html">Exam Approvals</a></li>
+            <li data-role="PRESIDENT"><a href="payments.html">Payments</a></li>
+            <li data-role="PRESIDENT"><a href="camp-registration.html">Camp Registration</a></li>
+            <li data-role="PRESIDENT" class="active"><a href="manage-ambassadors.html">Ambassadors</a></li>
+            <li data-role="PRESIDENT"><a href="notifications.html">Notifications</a></li>
+            <li><a href="../index.html">Log out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Ambassadors in Your Association</h1>
+        <p>A read-only list of all registered ambassadors under your association.</p>
+
+        <section class="manage-section">
+            <table class="manage-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Current Rank</th>
+                        <th>UID</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody data-placeholder="ambassadors_list">
+                    <!-- Mock Data -->
+                    <tr>
+                        <td>{John Doe}</td>
+                        <td>{Envoy}</td>
+                        <td>{UID001}</td>
+                        <td><span class="status-badge active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>{Peter Jones}</td>
+                        <td>{Candidate}</td>
+                        <td>{UID002}</td>
+                        <td><span class="status-badge pending">Pending Approval</span></td>
+                    </tr>
+                    <tr>
+                        <td>{Samuel Lee}</td>
+                        <td>{Intern}</td>
+                        <td>{UID003}</td>
+                        <td><span class="status-badge revoked">Inactive</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+  </div>
+
+  <script src="../assets/js/manage-ambassadors.js"></script>
+</body>
+</html>

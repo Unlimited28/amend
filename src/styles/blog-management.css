@@ -1,0 +1,44 @@
+/* Styles for the WYSIWYG editor in the blog management modal */
+.wysiwyg-editor {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.wysiwyg-editor .toolbar {
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.wysiwyg-editor .toolbar button {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+.wysiwyg-editor .toolbar button:hover {
+    background-color: #e9ecef;
+}
+
+.wysiwyg-editor .editor {
+    min-height: 200px;
+    padding: 15px;
+    outline: none;
+    line-height: 1.6;
+}
+
+.wysiwyg-editor .editor[contenteditable=true]:empty:before {
+  content: attr(data-placeholder);
+  color: #999;
+  pointer-events: none;
+}
+
+/* Modal styles for blog post */
+#post-modal .modal-content.large {
+    max-width: 900px;
+}

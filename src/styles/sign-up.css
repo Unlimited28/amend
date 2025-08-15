@@ -1,0 +1,44 @@
+/* Tab container styles */
+.tab-container {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: #001f3f; /* Navy Blue */
+    border-bottom: 3px solid #DAA520; /* Gold */
+}
+
+/* Form styles */
+.signup-form {
+    display: none;
+}
+
+.signup-form.active {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .tab-container {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+        text-align: left;
+    }
+}

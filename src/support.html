@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support - Royal Ambassadors</title>
+  <link rel="stylesheet" href="styles/public.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Public Navigation -->
+  <nav class="public-nav">
+      <div class="container">
+          <a href="index.html" class="brand" data-placeholder="org-name">{org_name}</a>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="sign-up.html" class="btn-signup">Sign Up</a></li>
+          </ul>
+      </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1>Support</h1>
+    <div class="contact-grid">
+        <div class="contact-form">
+            <h2>Contact Support</h2>
+            <form id="support-form">
+                <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                <div class="form-group"><input type="text" placeholder="Subject" required></div>
+                <div class="form-group"><textarea rows="5" placeholder="Describe your issue..." required></textarea></div>
+                <button type="submit" class="btn">Submit Ticket</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Frequently Asked Questions</h2>
+            <div data-placeholder="faqs-list">
+                <div class="faq-item">
+                    <h4>How do I register for an exam?</h4>
+                    <p>Navigate to the "Exams" page on your dashboard to see available exams.</p>
+                </div>
+                 <div class="faq-item">
+                    <h4>How do I change my rank?</h4>
+                    <p>Rank changes are handled by your association president after passing the required exams.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="public-footer">
+      <p>&copy; 2024 <span data-placeholder="org-name">{org_name}</span>. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('support-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Support ticket submitted successfully! (Frontend only)');
+        e.target.reset();
+    });
+  </script>
+
+  <!-- Backend Notes:
+    - Replace {placeholders} with real data.
+    - Enforce role guards server-side matching these role markers.
+    - Wire uploads (camp, payments) to server endpoints.
+  -->
+</body>
+</html>

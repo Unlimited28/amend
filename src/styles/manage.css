@@ -1,0 +1,133 @@
+/* Manage section styles */
+.manage-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #001f3f;
+}
+
+/* Controls styles */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.controls input,
+.controls select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Table styles */
+.manage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.manage-table th,
+.manage-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.manage-table th {
+    background-color: #f4f7fa;
+    font-weight: 600;
+}
+
+.manage-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status badge styles */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.status-badge.active {
+    background-color: #28a745; /* Green */
+}
+
+.status-badge.pending {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+}
+
+.status-badge.revoked {
+    background-color: #dc3545; /* Red */
+}
+
+.status-badge.published {
+    background-color: #007bff; /* Blue */
+}
+
+.status-badge.draft {
+    background-color: #6c757d; /* Gray */
+}
+
+.status-badge.closed {
+    background-color: #343a40; /* Dark Gray */
+}
+
+.status-badge.open {
+    background-color: #17a2b8; /* Teal */
+}
+
+.status-badge.reminded {
+    background-color: #fd7e14; /* Orange */
+}
+
+.status-badge.eligible { background-color: #28a745; }
+.status-badge.not-eligible { background-color: #dc3545; }
+
+/* Action button styles */
+.action-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* Table Controls: Search and Filters */
+.table-controls {
+    margin-bottom: 15px;
+}
+
+.search-table {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+/* Pagination placeholder styles */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #001f3f;
+    color: #fff;
+    border-color: #001f3f;
+}

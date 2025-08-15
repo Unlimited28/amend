@@ -1,0 +1,25 @@
+/* Custom styles for polishing the public-facing pages. */
+
+/* Add more vertical space between main content sections for better readability. */
+body > section {
+    margin-bottom: 30px;
+}
+
+/* Standardize button styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #DAA520; /* Gold */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c4941c; /* Darker gold */
+}

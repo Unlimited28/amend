@@ -1,0 +1,105 @@
+/* Styles for the professional settings form */
+.professional-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.professional-form fieldset {
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 0;
+    background-color: #fdfdfd;
+}
+
+.professional-form legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0 10px;
+    color: #001f3f;
+}
+
+.professional-form .form-group {
+    margin-bottom: 20px;
+}
+.professional-form .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.professional-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.professional-form input[type="text"],
+.professional-form input[type="tel"],
+.professional-form input[type="email"],
+.professional-form input[type="file"],
+.professional-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.professional-form input:focus,
+.professional-form textarea:focus {
+    border-color: #001f3f;
+    outline: 2px solid transparent;
+}
+
+.professional-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.professional-form small {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.professional-form .form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #001f3f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #003366;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 12px 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}

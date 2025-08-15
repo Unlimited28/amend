@@ -1,0 +1,43 @@
+/* Tab Navigation Styles */
+.tab-container {
+    display: flex;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 15px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px; /* Align with container border */
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.tab-btn:hover {
+    color: #001f3f;
+}
+
+.tab-btn.active {
+    color: #001f3f;
+    border-color: #001f3f;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

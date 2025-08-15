@@ -1,0 +1,130 @@
+/* Public Navigation */
+.public-nav {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.public-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.public-nav .brand {
+    font-weight: 700;
+    font-size: 24px;
+    color: #001f3f;
+    text-decoration: none;
+}
+
+.public-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.public-nav ul a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.public-nav ul a.btn-signup {
+    background-color: #DAA520;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), url('../assets/new_1.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero .tagline {
+    font-size: 24px;
+}
+
+/* General Section Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #001f3f;
+}
+
+/* Grid Styles */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Blog Preview */
+.blog-preview .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3, .card p, .card a {
+    padding: 0 15px 15px 15px;
+}
+
+/* Gallery Preview */
+.gallery-preview .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.gallery-preview .grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+.gallery-preview .btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+
+
+/* Ads Strip */
+.ads-strip .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+}
+
+/* Footer */
+.public-footer {
+    background-color: #001f3f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
