@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish Results - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Publish Exam Results</h1>
+                    <p>Select a completed exam to view and publish its results.</p>
+
+                    <div class="toolbar">
+                        <select id="exam-select" class="form-control">
+                            <option value="">Select a completed exam...</option>
+                            <option value="exam1">Envoy Rank Advancement Exam</option>
+                            <option value="exam2">Intern Basic Drill</option>
+                        </select>
+                        <button id="publish-btn" class="btn btn-primary" disabled>
+                            <i class="fas fa-paper-plane"></i> Publish Selected Results
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>Ambassador Name</th>
+                                    <th>Association</th>
+                                    <th>Score</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table-body">
+                                <!-- JS will populate this based on exam selection -->
+                                <tr>
+                                    <td colspan="4" class="text-center">Please select an exam to view results.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+
+            const publishBtn = document.getElementById('publish-btn');
+            const examSelect = document.getElementById('exam-select');
+            const resultsBody = document.getElementById('results-table-body');
+
+            examSelect.addEventListener('change', () => {
+                if (examSelect.value) {
+                    publishBtn.disabled = false;
+                    // Mock data for demonstration
+                    resultsBody.innerHTML = `
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Agape</td>
+                            <td>88%</td>
+                            <td><span class="status-badge pass">Pass</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Zion</td>
+                            <td>65%</td>
+                            <td><span class="status-badge fail">Fail</span></td>
+                        </tr>
+                    `;
+                } else {
+                    publishBtn.disabled = true;
+                    resultsBody.innerHTML = '<tr><td colspan="4" class="text-center">Please select an exam to view results.</td></tr>';
+                }
+            });
+
+            publishBtn.addEventListener('click', () => {
+                alert('Results published successfully! (Frontend simulation)');
+            });
+        });
+    </script>
+</body>
+</html>

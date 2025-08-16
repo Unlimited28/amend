@@ -1,0 +1,49 @@
+<!-- partials/sidebar-superadmin.html -->
+<!-- ROLE: SUPERADMIN ONLY -->
+<div class="sidebar">
+    <div class="sidebar-header">
+        <a href="../superadmin/dashboard.html" class="brand">{org_name}</a>
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="../superadmin/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="../superadmin/users-management.html"><i class="fas fa-users"></i> Users Management</a></li>
+
+        <li class="sidebar-dropdown">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#exams-submenu" aria-expanded="false">
+                <i class="fas fa-file-alt"></i> Exams
+            </a>
+            <ul class="collapse" id="exams-submenu">
+                <li><a href="../superadmin/exams-create.html">Create Exam</a></li>
+                <li><a href="../superadmin/questions-bank.html">Question Bank</a></li>
+                <li><a href="../superadmin/exams-manage.html">Manage Exams</a></li>
+                <li><a href="../superadmin/results-publish.html">Results Publish</a></li>
+            </ul>
+        </li>
+
+        <li class="sidebar-dropdown">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#content-submenu" aria-expanded="false">
+                <i class="fas fa-pencil-alt"></i> Content
+            </a>
+            <ul class="collapse" id="content-submenu">
+                <li><a href="../superadmin/blog-management.html">Blog Management</a></li>
+                <li><a href="../superadmin/gallery-management.html">Gallery Management</a></li>
+                <li><a href="../superadmin/ads-management.html">Ads Management</a></li>
+            </ul>
+        </li>
+
+        <li class="sidebar-dropdown">
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#finance-submenu" aria-expanded="false">
+                <i class="fas fa-wallet"></i> Finance
+            </a>
+            <ul class="collapse" id="finance-submenu">
+                <li><a href="../superadmin/finance-oversight.html">Finance Oversight</a></li>
+                <li><a href="../superadmin/vouchers-management.html">Vouchers Management</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../superadmin/camp-files.html"><i class="fas fa-campground"></i> Camp Files</a></li>
+        <li><a href="../superadmin/notifications-management.html"><i class="fas fa-bell"></i> Notifications</a></li>
+        <li><a href="../superadmin/system-settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+        <li><a href="../auth/logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+</div>

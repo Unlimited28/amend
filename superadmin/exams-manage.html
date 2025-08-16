@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Exams - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/exam-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <div class="toolbar">
+                        <input type="text" placeholder="Search exams by title..." class="search-input">
+                        <a href="exams-create.html" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Create New Exam
+                        </a>
+                    </div>
+
+                    <div class="card-grid-container" id="exam-list">
+                        <!-- Exam Card Example 1 -->
+                        <div class="card exam-card">
+                            <div class="card-content">
+                                <div class="exam-status status-active">Active</div>
+                                <h3 class="card-title">Stage 1 Advancement Exam</h3>
+                                <p class="card-meta">Questions: 50 | Duration: 60 mins</p>
+                                <p class="card-description">
+                                    This exam covers the foundational knowledge required for Stage 1 candidates.
+                                </p>
+                                <div class="exam-stats">
+                                    <div><span>Participants</span><strong>120</strong></div>
+                                    <div><span>Avg. Score</span><strong>75%</strong></div>
+                                    <div><span>Pass Rate</span><strong>80%</strong></div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Exam Card Example 2 -->
+                        <div class="card exam-card">
+                            <div class="card-content">
+                                <div class="exam-status status-pending">Upcoming</div>
+                                <h3 class="card-title">Leadership Training Assessment</h3>
+                                <p class="card-meta">Questions: 30 | Duration: 45 mins</p>
+                                <p class="card-description">
+                                    Assessment for participants of the recent leadership training workshop.
+                                </p>
+                                 <div class="exam-stats">
+                                    <div><span>Registered</span><strong>45</strong></div>
+                                    <div><span>Starts In</span><strong>15 Days</strong></div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <button class="btn btn-secondary" disabled>&laquo; Previous</button>
+                        <span>Page 1 of 1</span>
+                        <button class="btn btn-secondary">Next &raquo;</button>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

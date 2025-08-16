@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{org_name} - Royal Ambassadors</title>
+    <link rel="stylesheet" href="../assets/css/public.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <header class="hero">
+        <div class="container">
+            <h1>{org_name}</h1>
+            <p class="tagline">{tagline}</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container about-snippet">
+            <h2>About Us</h2>
+            <p>{about_excerpt}</p>
+            <a href="about.html" class="btn">Read More</a>
+        </section>
+
+        <section class="container blog-preview">
+            <h2>Latest from the Blog</h2>
+            <div class="grid">
+                <!-- Mock Blog Post -->
+                <div class="card">
+                    <img src="../assets/img/blog-1.jpg" alt="Blog Post">
+                    <h3>{Blog Post Title 1}</h3>
+                    <p>{Excerpt of the blog post...}</p>
+                    <a href="blog-details.html">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="../assets/img/blog-2.jpg" alt="Blog Post">
+                    <h3>{Blog Post Title 2}</h3>
+                    <p>{Excerpt of the blog post...}</p>
+                    <a href="blog-details.html">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="../assets/img/blog-3.jpg" alt="Blog Post">
+                    <h3>{Blog Post Title 3}</h3>
+                    <p>{Excerpt of the blog post...}</p>
+                    <a href="blog-details.html">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: ROLES.PUBLIC, basePath: '..' });
+        });
+    </script>
+</body>
+</html>

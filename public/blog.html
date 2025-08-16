@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/public.css" />
+    <link rel="stylesheet" href="../assets/css/blog.css" />
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1>Our Blog</h1>
+        <div class="blog-layout">
+            <div class="blog-posts">
+                <!-- Mock Blog Post -->
+                <div class="card">
+                    <img src="../assets/img/blog-1.jpg" alt="Blog Post">
+                    <h3>{Blog Post Title 1}</h3>
+                    <p>{Excerpt of the blog post...}</p>
+                    <a href="blog-details.html">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="../assets/img/blog-2.jpg" alt="Blog Post">
+                    <h3>{Blog Post Title 2}</h3>
+                    <p>{Excerpt of the blog post...}</p>
+                    <a href="blog-details.html">Read More</a>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Announcements</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Teachings</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: ROLES.PUBLIC, basePath: '..' });
+        });
+    </script>
+</body>
+</html>

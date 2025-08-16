@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: PRESIDENT ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Notifications</h1>
+                    <ul class="notification-list-full">
+                        <!-- Mock Notification Item 1 -->
+                        <li class="notification-item-full unread">
+                            <div class="notification-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="notification-details">
+                                <h5 class="notification-title">New Exam Ready for Approval</h5>
+                                <p class="notification-snippet">The "Senior Envoy Advancement Exam" has been submitted by the Super Admin and requires your approval before it can be published.</p>
+                                <span class="notification-date">August 15, 2025</span>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Mark as Read</button>
+                        </li>
+                        <!-- Mock Notification Item 2 -->
+                        <li class="notification-item-full read">
+                            <div class="notification-icon"><i class="fas fa-file-upload"></i></div>
+                            <div class="notification-details">
+                                <h5 class="notification-title">Camp Registration File Received</h5>
+                                <p class="notification-snippet">Agape Baptist Association has uploaded their camp registration file.</p>
+                                <span class="notification-date">August 14, 2025</span>
+                            </div>
+                        </li>
+                         <!-- Mock Notification Item 3 -->
+                        <li class="notification-item-full read">
+                            <div class="notification-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <div class="notification-details">
+                                <h5 class="notification-title">Payment Receipt Submitted</h5>
+                                <p class="notification-snippet">A payment receipt for exam fees has been uploaded for your association.</p>
+                                <span class="notification-date">August 13, 2025</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'president', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

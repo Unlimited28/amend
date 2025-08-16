@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin Dashboard - {org_name}</title>
+    <!-- NOTE: CSS paths are relative to the new 'assets' folder -->
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-info">
+                                <p>Total Users</p>
+                                <h3>{total_users}</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="stat-info">
+                                <p>Pending Payments</p>
+                                <h3>{pending_payments}</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="stat-info">
+                                <p>Upcoming Exams</p>
+                                <h3>{upcoming_exams}</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-bell"></i></div>
+                            <div class="stat-info">
+                                <p>Unread Notifications</p>
+                                <h3>{unread_notifications}</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <section class="quick-actions">
+                        <h2>Quick Actions</h2>
+                        <div class="actions-grid">
+                            <a href="users-management.html" class="action-card">
+                                <i class="fas fa-users-cog"></i>
+                                <span>Manage Users</span>
+                            </a>
+                            <a href="exams-create.html" class="action-card">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Create Exam</span>
+                            </a>
+                            <a href="results-publish.html" class="action-card">
+                                <i class="fas fa-award"></i>
+                                <span>Publish Results</span>
+                            </a>
+                            <a href="finance-oversight.html" class="action-card">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Oversee Finance</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

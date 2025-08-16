@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambassador Dashboard - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <div class="profile-card-header">
+                        <div class="profile-info">
+                            <h2>Welcome, {Ambassador Name}!</h2>
+                            <p>Rank: {user_rank} | Association: {user_association}</p>
+                        </div>
+                        <div class="uid-display">
+                            UID: <strong>{user_uid}</strong>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <p>Available Exams</p>
+                            <h3>{exams_available}</h3>
+                        </div>
+                        <div class="stat-card">
+                            <p>Published Results</p>
+                            <h3>{results_published}</h3>
+                        </div>
+                        <div class="stat-card">
+                            <p>Unread Notifications</p>
+                            <h3>{notifications_unread}</h3>
+                        </div>
+                    </div>
+
+                    <!-- Announcement Strip -->
+                    <section class="announcements">
+                        <h3>Announcements</h3>
+                        <p>{dashboard_announcements}</p>
+                    </section>
+
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'ambassador', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

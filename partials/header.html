@@ -1,0 +1,36 @@
+<!-- partials/header.html -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebar-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="header-title">{PageTitle}</h1>
+        </div>
+        <div class="header-right">
+            <div class="header-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">{unread_notifications}</span>
+            </div>
+            <div class="header-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="user-profile">
+                <img src="{basePath}/assets/img/pro.jpg" alt="User" class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">{userName}</span>
+                    <span class="user-role">{userRole}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb-bar">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">{Section}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{Page}</li>
+        </ol>
+    </nav>
+</div>

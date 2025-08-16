@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="form-box">
+            <div class="logo-header">
+                <img src="../assets/img/logo.png" alt="Logo">
+                <h2>{org_name} Portal</h2>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" data-auth-tab="login">Login</button>
+                <button class="auth-tab-btn" data-auth-tab="signup">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login" class="auth-content active">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-role">I am a...</label>
+                        <select id="login-role" class="form-control">
+                            <option value="ambassador">Ambassador</option>
+                            <option value="president">President</option>
+                            <option value="finance">Finance</option>
+                            <option value="superadmin">Super Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="login-passcode-group" style="display: none;">
+                        <label for="login-passcode">Passcode</label>
+                        <input type="password" id="login-passcode" class="form-control" placeholder="Required for Admin/Finance">
+                    </div>
+                    <button type="submit" class="signup-btn">Login</button>
+                    <p class="form-footer-link"><a href="forgot-password.html">Forgot Password?</a></p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup" class="auth-content">
+                <!-- This will be the multi-tabbed form from the original signup page -->
+                <p class="text-center">Please fill out the form for your role on the <a href="signup.html">Sign Up page</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginRoleSelect = document.getElementById('login-role');
+            const passcodeGroup = document.getElementById('login-passcode-group');
+            const loginForm = document.getElementById('login-form');
+
+            loginRoleSelect.addEventListener('change', () => {
+                const role = loginRoleSelect.value;
+                if (role === 'superadmin' || role === 'finance') {
+                    passcodeGroup.style.display = 'block';
+                } else {
+                    passcodeGroup.style.display = 'none';
+                }
+            });
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const role = loginRoleSelect.value;
+                const passcode = document.getElementById('login-passcode').value;
+
+                let isValid = true;
+                if (role === 'superadmin') {
+                    if (passcode !== window.ADMIN_PASSCODE) {
+                        isValid = false;
+                        alert('Invalid Super Admin passcode!');
+                    }
+                } else if (role === 'finance') {
+                    if (passcode !== window.FINANCE_PASSCODE) {
+                        isValid = false;
+                        alert('Invalid Finance passcode!');
+                    }
+                }
+
+                if (isValid) {
+                    alert('Login successful! Redirecting...');
+                    localStorage.setItem('userRole', role);
+                    window.location.href = `../${role}/dashboard.html`;
+                }
+            });
+
+            // Tab switching logic
+            const authTabs = document.querySelectorAll('.auth-tab-btn');
+            const authContents = document.querySelectorAll('.auth-content');
+
+            authTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    authTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const target = tab.getAttribute('data-auth-tab');
+                    authContents.forEach(content => {
+                        if (content.id === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </tscript>
+</body>
+</html>

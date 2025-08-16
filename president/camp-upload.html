@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Upload - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/camp-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: PRESIDENT ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Camp Registration Upload</h1>
+                    <p>Please upload an Excel file with the list of boys from your association, including their ranks and other details.</p>
+
+                    <section class="upload-section">
+                        <div class="upload-area">
+                            <input type="file" id="file-upload" accept=".xls,.xlsx" hidden>
+                            <label for="file-upload" class="upload-label">
+                                <i class="fas fa-file-excel fa-3x"></i>
+                                <p>Click to browse or drag & drop your Excel file here.</p>
+                                <span>( .xls or .xlsx only )</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-3">Upload File</button>
+                    </section>
+
+                    <section class="previous-uploads mt-5">
+                        <h2>Previous Uploads</h2>
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Upload Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Agape_Camp_List_2024.xlsx</td>
+                                    <td>2024-07-15</td>
+                                    <td><span class="status-badge reviewed">Reviewed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'president', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

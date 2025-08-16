@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Instructions - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/exams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <section class="exam-instructions-container">
+                        <h1>Exam Instructions</h1>
+                        <h2>{Envoy Rank Advancement Exam}</h2>
+
+                        <div class="exam-details">
+                            <p><strong>Time Limit:</strong> 60 minutes</p>
+                            <p><strong>Questions:</strong> 50</p>
+                        </div>
+
+                        <h3>Rules:</h3>
+                        <ul>
+                            <li>The timer starts as soon as you begin.</li>
+                            <li>Do not refresh the page during the exam.</li>
+                            <li>You must answer all questions to submit.</li>
+                            <li>Once submitted, you cannot change your answers.</li>
+                        </ul>
+
+                        <a href="exam-live.html" class="btn btn-primary btn-lg">I understand, Start Exam</a>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'ambassador', basePath: '..' });
+        });
+    </script>
+</body>
+</html>
