@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Notifications</h1>
+                    <ul class="notification-list-full">
+                        <li class="notification-item-full unread">
+                            <div class="notification-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="notification-details">
+                                <h5 class="notification-title">New Exam Available</h5>
+                                <p class="notification-snippet">The Envoy Rank Advancement Exam is now available for you to take.</p>
+                                <span class="notification-date">August 15, 2025</span>
+                            </div>
+                        </li>
+                        <li class="notification-item-full read">
+                            <div class="notification-icon"><i class="fas fa-poll"></i></div>
+                            <div class="notification-details">
+                                <h5 class="notification-title">Result Published</h5>
+                                <p class="notification-snippet">Your result for the Candidates Foundational Test has been published.</p>
+                                <span class="notification-date">August 1, 2025</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'ambassador', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

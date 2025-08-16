@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Results - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Exam Results</h1>
+                    <div class="table-container">
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>Exam Title</th>
+                                    <th>Date Taken</th>
+                                    <th>Score</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Envoy Rank Advancement Exam</td>
+                                    <td>2024-09-01</td>
+                                    <td>--</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Intern Basic Drill</td>
+                                    <td>2024-08-10</td>
+                                    <td>92%</td>
+                                    <td><span class="status-badge published">Published</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Candidates Foundational Test</td>
+                                    <td>2024-05-20</td>
+                                    <td>85%</td>
+                                    <td><span class="status-badge published">Published</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'ambassador', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

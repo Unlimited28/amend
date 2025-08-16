@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Exam - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/exam-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="exam-container">
+        <header class="exam-header">
+            <div class="exam-title">{Envoy Rank Advancement Exam}</div>
+            <div class="timer">Time Left: <span id="time-left">60:00</span></div>
+            <button id="submit-exam-btn" class="btn btn-danger">Submit Exam</button>
+        </header>
+
+        <div class="exam-body">
+            <main class="question-panel">
+                <div class="question">
+                    <h3 id="question-text">1. What is the motto of the Royal Ambassadors?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1_option" value="A"> A) We are Ambassadors for Christ</label>
+                        <label><input type="radio" name="q1_option" value="B"> B) Reaching the world for Jesus</label>
+                        <label><input type="radio" name="q1_option" value="C"> C) Living for Christ daily</label>
+                        <label><input type="radio" name="q1_option" value="D"> D) Boys to men of God</label>
+                    </div>
+                </div>
+                 <div class="question-navigation">
+                    <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                    <span>Question 1 of 50</span>
+                    <button id="next-btn" class="btn btn-primary">Next</button>
+                </div>
+            </main>
+            <aside class="question-navigator">
+                <h4>Questions</h4>
+                <div id="question-grid" class="grid">
+                    <!-- JS will populate this, e.g. <div class="q-nav-item answered">1</div> -->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.getElementById('submit-exam-btn');
+
+            submitButton.addEventListener('click', () => {
+                // Confirm submission
+                const isConfirmed = confirm('Are you sure you want to submit your exam? You cannot make changes after this.');
+
+                if (isConfirmed) {
+                    // 1. Simulate locking the exam
+                    localStorage.setItem('exam_locked_advancement_envoy', 'true');
+
+                    // 2. Redirect to the dashboard
+                    alert('Your exam has been submitted successfully!');
+                    window.location.href = 'dashboard.html';
+                }
+            });
+
+            // A simple script to check if the exam is locked on page load
+            const isExamLocked = localStorage.getItem('exam_locked_advancement_envoy');
+            if (isExamLocked) {
+                alert('You have already submitted this exam.');
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

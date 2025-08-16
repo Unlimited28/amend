@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/public.css" />
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1>About Our Organization</h1>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>{mission}</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Vision</h2>
+            <p>{vision}</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our History</h2>
+            <p>{history}</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Leadership</h2>
+            <div class="grid leadership-grid">
+                <div class="card">
+                    <img src="../assets/img/team-1.jpg" alt="Leader">
+                    <h3>{Leader Name}</h3>
+                    <p>{Leader Title}</p>
+                </div>
+                 <div class="card">
+                    <img src="../assets/img/director.jpg" alt="Leader">
+                    <h3>{Leader Name}</h3>
+                    <p>{Leader Title}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: ROLES.PUBLIC, basePath: '..' });
+        });
+    </script>
+</body>
+</html>

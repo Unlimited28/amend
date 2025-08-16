@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications Management - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <section class="send-notification-section form-container">
+                        <h2 class="section-title">Create New Notification</h2>
+                        <form id="sendNotificationForm">
+                            <div class="form-group">
+                                <label for="notificationTitle">Title</label>
+                                <input type="text" class="form-control" id="notificationTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="notificationMessage">Message</label>
+                                <textarea class="form-control" id="notificationMessage" rows="3" required></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="notificationTarget">Target Audience</label>
+                                    <select class="form-control" id="notificationTarget">
+                                        <option value="all">All Users</option>
+                                        <option value="superadmin">Super Admins</option>
+                                        <option value="president">Presidents</option>
+                                        <option value="ambassador">Ambassadors</option>
+                                        <option value="finance">Finance</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="notificationType">Notification Type</label>
+                                    <select class="form-control" id="notificationType">
+                                        <option value="info">Info</option>
+                                        <option value="success">Success</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="danger">Danger</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Notification</button>
+                        </form>
+                    </section>
+
+                    <section class="sent-notifications-section">
+                        <h2 class="section-title">Sent Notifications Log</h2>
+                        <ul class="notification-list">
+                            <!-- Example Item -->
+                            <li class="notification-item type-info">
+                                <div class="notification-icon"><i class="fas fa-info-circle"></i></div>
+                                <div class="notification-content">
+                                    <h4>System Update Scheduled</h4>
+                                    <p>A system update is scheduled for tomorrow.</p>
+                                    <small>Sent: 2024-08-15 | Target: All Users</small>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </li>
+                             <li class="notification-item type-success">
+                                <div class="notification-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="notification-content">
+                                    <h4>New Blog Post Published!</h4>
+                                    <p>Check out our latest article on "Effective Leadership Strategies".</p>
+                                    <small>Sent: 2024-08-14 | Target: All Users</small>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

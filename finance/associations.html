@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associations List - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: FINANCE ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Associations List</h1>
+                    <p>A complete list of all associations in the conference.</p>
+
+                    <div class="table-container">
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Association Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="associations-list">
+                                <!-- JS will populate this list from config.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'finance', basePath: '..' });
+
+            const listBody = document.getElementById('associations-list');
+            if (window.OGBC_ASSOCIATIONS) {
+                window.OGBC_ASSOCIATIONS.forEach((assoc, index) => {
+                    const row = listBody.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    cell1.textContent = index + 1;
+                    cell2.textContent = assoc;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

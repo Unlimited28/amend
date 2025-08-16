@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/exams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: AMBASSADOR ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Exams</h1>
+
+                    <section class="exam-section">
+                        <h2>Available Exams</h2>
+                        <div class="exam-list">
+                            <div class="exam-item">
+                                <h3>Envoy Rank Advancement Exam</h3>
+                                <p>Duration: 60 minutes</p>
+                                <a href="exam-instructions.html" class="btn btn-primary">Start Exam</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="exam-section mt-5">
+                        <h2>Exam History</h2>
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>Exam Title</th>
+                                    <th>Date Taken</th>
+                                    <th>Status</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Candidates Foundational Test</td>
+                                    <td>2024-05-20</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>85%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'ambassador', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

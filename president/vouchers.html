@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vouchers - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: PRESIDENT ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <h1>Vouchers</h1>
+                    <p>View and manage vouchers for your association.</p>
+
+                    <div class="toolbar">
+                        <input type="text" placeholder="Search by code..." class="search-input">
+                        <button class="btn btn-primary">Request Vouchers</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>Voucher Code</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Expiry Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Mock Data Row -->
+                                <tr>
+                                    <td>EXM2024-ASSOC-123</td>
+                                    <td>Exam Fee</td>
+                                    <td><span class="status-badge unused">Unused</span></td>
+                                    <td>2025-12-31</td>
+                                </tr>
+                                 <tr>
+                                    <td>CAMP2024-ASSOC-456</td>
+                                    <td>Camp Registration</td>
+                                    <td><span class="status-badge used">Used</span></td>
+                                    <td>2024-08-01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'president', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

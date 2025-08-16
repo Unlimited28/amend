@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ads Management - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/ads-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <section class="upload-banner-section form-container">
+                        <h2 class="section-title">Upload New Banner/Ad</h2>
+                        <form id="uploadAdForm">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="adTitle">Ad Title/Campaign Name</label>
+                                    <input type="text" class="form-control" id="adTitle" name="adTitle" required placeholder="e.g., Annual Conference Promotion">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="adPlacement">Placement Area</label>
+                                    <select class="form-control" id="adPlacement" name="adPlacement">
+                                        <option value="homepage_banner">Homepage Banner</option>
+                                        <option value="sidebar_ad">Sidebar Ad</option>
+                                        <option value="popup_modal">Popup Modal</option>
+                                        <option value="event_page_banner">Event Page Banner</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adImage">Banner Image</label>
+                                <input type="file" class="form-control" id="adImage" name="adImage" accept="image/*" required>
+                                <small class="form-text text-muted">Recommended dimensions vary by placement. E.g., Homepage Banner: 1200x300px.</small>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="adLink">Link URL (optional)</label>
+                                    <input type="url" class="form-control" id="adLink" name="adLink" placeholder="https://example.com/promo-page">
+                                </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="adStatus">Initial Status</label>
+                                    <select class="form-control" id="adStatus" name="adStatus">
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive (Draft)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adDisplayDates">Display Dates (optional)</label>
+                                <div class="date-range-group">
+                                    <input type="date" class="form-control" id="adStartDate" name="adStartDate" title="Start Date">
+                                    <span>to</span>
+                                    <input type="date" class="form-control" id="adEndDate" name="adEndDate" title="End Date">
+                                </div>
+                            </div>
+                            <div class="form-button-container">
+                                <button type="submit" class="btn btn-primary form-button">Upload & Save Ad</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="current-ads-section">
+                        <h2 class="section-title">Current Banners & Ads</h2>
+                         <div class="toolbar ads-toolbar">
+                             <input type="text" placeholder="Search ads by title or placement..." class="search-input">
+                             <select id="filterAdStatus" class="filter-select">
+                                <option value="">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="scheduled">Scheduled</option>
+                                <option value="expired">Expired</option>
+                            </select>
+                            <button class="btn btn-secondary filter-btn"><i class="fas fa-filter"></i> Filter Ads</button>
+                        </div>
+
+                        <div class="table-container">
+                            <table class="data-table ads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Preview</th>
+                                        <th>Title/Campaign</th>
+                                        <th>Placement</th>
+                                        <th>Status</th>
+                                        <th>Display Dates</th>
+                                        <th>Clicks/Views</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- This would be dynamically populated -->
+                                    <tr>
+                                        <td><img src="../assets/img/new_1.jpg" alt="Ad Thumbnail" class="ad-thumbnail"></td>
+                                        <td>Annual Conference 2024</td>
+                                        <td>Homepage Banner</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td>2023-11-01 to 2023-12-31</td>
+                                        <td>1500 / 25000</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Deactivate"><i class="fas fa-toggle-off"></i></button>
+                                            <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage.css"> <!-- Reusing table styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <div class="toolbar">
+                        <div class="toolbar-left">
+                            <input type="text" placeholder="Search questions..." class="search-input">
+                            <select id="filterRank" class="filter-select">
+                                <option value="">Filter by Rank...</option>
+                                <!-- Ranks will be populated by JS -->
+                            </select>
+                            <button class="btn btn-secondary filter-btn"><i class="fas fa-filter"></i> Filter</button>
+                        </div>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addQuestionModal">
+                            <i class="fas fa-plus"></i> Add New Question
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="manage-table">
+                            <thead>
+                                <tr>
+                                    <th>Question Text</th>
+                                    <th>Rank</th>
+                                    <th>Type</th>
+                                    <th>Date Added</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="questions-table-body">
+                                <!-- Mock Data Row -->
+                                <tr>
+                                    <td>What is the motto of the Royal Ambassadors?</td>
+                                    <td>Candidate</td>
+                                    <td>Multiple Choice</td>
+                                    <td>2024-01-15</td>
+                                    <td class="action-buttons">
+                                        <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon btn-delete" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <!-- More rows dynamically added -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <!-- Re-using the same modal from exams-create.html for simplicity -->
+    <div class="modal fade" id="addQuestionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Question to Bank</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form content is the same as in exams-create.html -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save to Bank</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+
+            const rankFilter = document.getElementById('filterRank');
+            window.OGBC_RANKS.forEach(rank => {
+                const option = document.createElement('option');
+                option.value = rank;
+                option.textContent = rank;
+                rankFilter.appendChild(option);
+            });
+        });
+    </script>
+</body>
+</html>

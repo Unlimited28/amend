@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/public.css" />
+    <link rel="stylesheet" href="../assets/css/gallery.css" />
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1>Our Gallery</h1>
+        <div class="filter-chips">
+            <button class="chip active">All</button>
+            <button class="chip">Camp</button>
+            <button class="chip">Outreach</button>
+            <button class="chip">Sports</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="../assets/img/new_1.jpg" alt="Gallery image"></div>
+            <div class="gallery-item"><img src="../assets/img/outresch.jpg" alt="Gallery image"></div>
+            <div class="gallery-item"><img src="../assets/img/sports.jpg" alt="Gallery image"></div>
+            <div class="gallery-item"><img src="../assets/img/new_4.jpg" alt="Gallery image"></div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: ROLES.PUBLIC, basePath: '..' });
+        });
+    </script>
+</body>
+</html>

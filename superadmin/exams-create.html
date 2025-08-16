@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Exam - {org_name}</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/exam-management.css"> <!-- Re-using some styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- ROLE: SUPERADMIN ONLY -->
+    <div class="dashboard-layout">
+        <div id="sidebar-placeholder"></div>
+
+        <div class="main-content-wrapper">
+            <div id="header-placeholder"></div>
+
+            <main class="main-content">
+                <div class="container-fluid">
+                    <section class="exam-details-form">
+                        <h2>Exam Details</h2>
+                        <form id="examDetailsForm">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="examTitle">Exam Title</label>
+                                    <input type="text" class="form-control" id="examTitle" placeholder="e.g., Senior Envoy Advancement Exam" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="examRank">Rank</label>
+                                    <select id="examRank" class="form-control" required></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="examDuration">Duration (minutes)</label>
+                                    <input type="number" class="form-control" id="examDuration" placeholder="e.g., 60" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="examStart">Start Time</label>
+                                    <input type="datetime-local" class="form-control" id="examStart" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="examEnd">End Time</label>
+                                    <input type="datetime-local" class="form-control" id="examEnd" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="examInstructions">Instructions</label>
+                                <textarea id="examInstructions" class="form-control" rows="4" placeholder="Provide clear instructions for the candidates."></textarea>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="question-builder">
+                        <h2>Question Builder</h2>
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addQuestionModal">
+                            <i class="fas fa-plus"></i> Add Question
+                        </button>
+                    </section>
+
+                    <section class="question-list-preview">
+                        <h3>Added Questions</h3>
+                        <div id="questionsList">
+                            <!-- Questions will be dynamically added here -->
+                            <p>No questions added yet.</p>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary">Save Exam</button>
+                        <button type="button" class="btn btn-secondary">Save as Draft</button>
+                    </div>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <!-- Add Question Modal -->
+    <div class="modal fade" id="addQuestionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Question</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="questionForm">
+                        <div class="form-group">
+                            <label for="questionText">Question</label>
+                            <textarea id="questionText" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Options</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" name="correctOption" value="0">
+                                </div>
+                                <input type="text" class="form-control" placeholder="Option A">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" name="correctOption" value="1">
+                                </div>
+                                <input type="text" class="form-control" placeholder="Option B">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" name="correctOption" value="2">
+                                </div>
+                                <input type="text" class="form-control" placeholder="Option C">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" name="correctOption" value="3">
+                                </div>
+                                <input type="text" class="form-control" placeholder="Option D">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="questionImage">Optional Image</label>
+                            <input type="file" id="questionImage" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addQuestionToListBtn">Add to List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            injectLayout({ role: 'superadmin', basePath: '..' });
+
+            const rankSelect = document.getElementById('examRank');
+            window.OGBC_RANKS.forEach(rank => {
+                const option = document.createElement('option');
+                option.value = rank;
+                option.textContent = rank;
+                rankSelect.appendChild(option);
+            });
+
+            const addQuestionBtn = document.getElementById('addQuestionToListBtn');
+            const questionsListDiv = document.getElementById('questionsList');
+            const questionForm = document.getElementById('questionForm');
+            const questionModal = new bootstrap.Modal(document.getElementById('addQuestionModal'));
+
+            addQuestionBtn.addEventListener('click', () => {
+                const questionText = questionForm.querySelector('#questionText').value;
+                if (!questionText) {
+                    alert('Please enter the question text.');
+                    return;
+                }
+
+                if (questionsListDiv.querySelector('p')) {
+                    questionsListDiv.innerHTML = ''; // Clear "No questions" message
+                }
+
+                const questionCard = document.createElement('div');
+                questionCard.className = 'card question-preview-card';
+                questionCard.innerHTML = `
+                    <div class="card-body">
+                        <p class="card-text">${questionText}</p>
+                        <button class="btn btn-sm btn-danger float-end">Remove</button>
+                    </div>
+                `;
+
+                questionsListDiv.appendChild(questionCard);
+
+                questionCard.querySelector('button').addEventListener('click', () => {
+                    questionCard.remove();
+                    if (questionsListDiv.children.length === 0) {
+                         questionsListDiv.innerHTML = '<p>No questions added yet.</p>';
+                    }
+                });
+
+                questionForm.reset();
+                questionModal.hide();
+            });
+        });
+    </script>
+</body>
+</html>
